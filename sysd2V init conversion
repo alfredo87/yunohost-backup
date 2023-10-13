@@ -1,0 +1,11 @@
+#To convert a systemd service to SysVinit service daemon
+#
+#1. Get the script sysd2v.sh from here: https://github.com/RosstheRoss/sysd2v/blob/main/sysd2v.sh and put it into /usr/bin
+#2. Make it executable by issueing sudo chmod +x /usr/bin/sysd2V.sh
+#3. Issue the command cd /usr/bin && sudo sysd2V.sh /etc/systemd/system/AAA[.service]  > /etc/init.d/AAA.service where AAA is the #service  you want to convert
+#4. The file AAA.service is your convertd file placed in /etc/init.d
+#5. Make it executable issueing sudo chmod +x /etc/init.d/AAA.service
+#6. Update service by sudo update-rc.d AAA.service defaults
+#7. Finally issue sudo service scriptAAA.service start
+#
+#The service will start to run and will be activated during boot.
